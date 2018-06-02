@@ -44,6 +44,8 @@ GEM
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     erubi (1.7.1)
+    faker (1.8.7)
+      i18n (>= 0.7)
     ffi (1.9.23)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -123,6 +125,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  faker
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 3.7)

@@ -6,3 +6,12 @@
     role: %w(admin regular author contributor).sample
   })
 end
+
+5.times do
+  Document.create({
+    title: Faker::Book.title,
+    body: Faker::Lorem.paragraph,
+    access: %w(public private role_based).sample,
+    user_id: %w(1 2 3).sample.to_i
+  })
+end

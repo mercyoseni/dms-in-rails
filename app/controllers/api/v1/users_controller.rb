@@ -55,10 +55,10 @@ class Api::V1::UsersController < ApplicationController
 
   def destroy
     @user.destroy
-      render json: {
-        status: 'SUCCESS',
-        message: 'Deleted user',
-      }, status: :ok
+    render json: {
+      status: 'SUCCESS',
+      message: 'Deleted user',
+    }, status: :ok
   end
 
   private

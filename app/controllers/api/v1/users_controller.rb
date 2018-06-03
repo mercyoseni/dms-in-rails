@@ -1,23 +1,17 @@
 class Api::V1::UsersController < ApplicationController
   skip_before_action :authorize_request, only: :create
-  before_action :find_user, only: [:show, :update, :destroy]
+  before_action :is_current_user, only: [:update, :destroy]
 
   def index
-    users = User.all.order('created_at ASC')
-
-    render json: {
-      status: 'SUCCESS',
-      message: 'Loaded users',
-      data: users
-    }, status: :ok
+    @users = User.select('id, firstname, lastname, email').order('created_at ASC')
+    response = { message: Message.loaded_users, data: @users }
+    json_response(response)
   end
 
   def show
-    render json: {
-      status: 'SUCCESS',
-      message: 'Loaded user',
-      data: @user
-    }, status: :ok
+    @user = User.select('id, firstname, lastname, email').find(params[:id])
+    response = { message: Message.loaded_user, data: @user }
+    json_response(response)
   end
 
   def create
@@ -30,27 +24,15 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params)
-      render json: {
-        status: 'SUCCESS',
-        message: 'Updated user',
-        data: @user
-      }, status: :ok
-    else
-      render json: {
-      status: 'ERROR',
-      message: 'User not updated',
-      data: @user.errors
-    }, status: :unprocessable_entity
-    end
+    @user.update_attributes!(user_params)
+    response = { message: Message.updated_user, data: @user }
+    json_response(response)
   end
 
   def destroy
     @user.destroy
-    render json: {
-      status: 'SUCCESS',
-      message: 'Deleted user',
-    }, status: :ok
+    response = { message: Message.deleted_user }
+    json_response(response)
   end
 
   private
@@ -66,14 +48,8 @@ class Api::V1::UsersController < ApplicationController
     )
   end
 
-  def find_user
-    begin
-      @user = User.find(params[:id])
-    rescue
-      render json: {
-        status: 'ERROR',
-        message: 'User does not exist',
-      }, status: :unprocessable_entity
-    end
+  def is_current_user
+    raise(ExceptionHandler::Forbidden) unless @current_user.id.to_s == params[:id]
+    @user = @current_user
   end
 end

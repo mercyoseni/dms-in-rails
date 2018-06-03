@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
   include ExceptionHandler
 
   # called before every action on controller
-  before_action :authorize_request
+  before_action :authorize_request, except: :not_found
 
   attr_reader :current_user
 

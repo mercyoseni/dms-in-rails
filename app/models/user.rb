@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_secure_password
+
   has_many :documents
 
   validates_presence_of :firstname, :lastname, :email, :role

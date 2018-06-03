@@ -3,9 +3,8 @@ Rails.application.routes.draw do
 
   namespace 'api' do
     namespace 'v1' do
-      resources :users, :except => [:create] do
-        resources :documents
-      end
+      resources :users, :except => [:create]
+      resources :documents
 
       post 'signup', to: 'users#create'
 

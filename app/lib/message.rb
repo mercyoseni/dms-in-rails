@@ -39,6 +39,10 @@ class Message
     'Loaded documents successfully'
   end
 
+  def self.loaded_document
+    'Loaded document successfully'
+  end
+
   def self.created_document
     'Created document(s) successfully'
   end
@@ -57,5 +61,25 @@ class Message
 
   def self.not_allowed
     'You are not allowed to alter the document id or user_id'
+  end
+
+  def self.loaded_users
+    'Loaded users successfully'
+  end
+
+  def self.loaded_user
+    'Loaded user successfully'
+  end
+
+  def self.updated_user
+    'Updated user successfully'
+  end
+
+  def self.deleted_user
+    'Deleted user successfully'
+  end
+
+  def self.forbidden
+    'You are not allowed to perform this action'
   end
 end

@@ -1,15 +1,17 @@
 class Api::V1::DocumentsController < ApplicationController
   before_action :find_document, only: [:show, :update, :destroy]
+  before_action :is_current_user_document, only: [:update, :destroy]
   before_action :check_params, only: [:update]
 
   def index
-    @documents = current_user.documents.order('created_at ASC')
-    response = { message: Message.loaded_documents, data: @documents }
+    @documents = current_user_and_public_documents + current_user_role_based_documents
+
+    response = { message: Message.loaded_documents, data: @documents.uniq }
     json_response(response)
   end
 
   def show
-    response = { message: Message.loaded_documents, data: @document }
+    response = { message: Message.loaded_document, data: @document }
     json_response(response)
   end
 
@@ -34,13 +36,13 @@ class Api::V1::DocumentsController < ApplicationController
 
   private
 
+  def is_current_user_document
+    raise ExceptionHandler::Forbidden unless @document.user_id == current_user.id
+  end
+
   def find_document
-    begin
-      @document = current_user.documents.find(params[:id])
-    rescue
-      response = { message: Message.not_found }
-      json_response(response, :unprocessable_entity)
-    end
+    @document = current_user_and_public_documents.find(params[:id]) ||
+                current_user_role_based_documents.find(params[:id])
   end
 
   def document_params
@@ -52,5 +54,18 @@ class Api::V1::DocumentsController < ApplicationController
       response = { message: Message.not_allowed }
       json_response(response, 403)
     end
+  end
+
+  def current_user_and_public_documents
+    current_user.documents.or(
+      Document.where(access: 'public')
+    )
+  end
+
+  def current_user_role_based_documents
+    Document.includes(:user).where(
+      users: { role: current_user.role },
+      access: 'role_based'
+    )
   end
 end

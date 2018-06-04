@@ -82,4 +82,8 @@ class Message
   def self.forbidden
     'You are not allowed to perform this action'
   end
+
+  def self.created_user
+    'Created user successfully'
+  end
 end

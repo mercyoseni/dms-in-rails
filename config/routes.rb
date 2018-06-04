@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
       post 'signup', to: 'users#create'
 
+      namespace 'admin' do
+        resources :users
+        resources :documents
+      end
     end
   end
 

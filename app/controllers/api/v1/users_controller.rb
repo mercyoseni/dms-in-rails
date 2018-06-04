@@ -1,6 +1,7 @@
 class Api::V1::UsersController < ApplicationController
   skip_before_action :authorize_request, only: :create
   before_action :is_current_user, only: [:update, :destroy]
+  before_action :check_password_params, only: :update
 
   def index
     @users = User.select('id, firstname, lastname, email').order('created_at ASC')
@@ -9,9 +10,15 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    @user = User.select('id, firstname, lastname, email').find(params[:id])
-    response = { message: Message.loaded_user, data: @user }
-    json_response(response)
+    if current_user.id.to_s == params[:id]
+      @user = User.find(params[:id])
+      response = { message: Message.loaded_user, data: @user }
+      json_response(response)
+    else
+      @user = User.select('id, firstname, lastname, email').find(params[:id])
+      response = { message: Message.loaded_user, data: @user }
+      json_response(response)
+    end
   end
 
   def create
@@ -51,5 +58,9 @@ class Api::V1::UsersController < ApplicationController
   def is_current_user
     raise(ExceptionHandler::Forbidden) unless @current_user.id.to_s == params[:id]
     @user = @current_user
+  end
+
+  def check_password_params
+    raise(ExceptionHandler::PasswordNotBlank) if params[:password] && params[:password].blank?
   end
 end

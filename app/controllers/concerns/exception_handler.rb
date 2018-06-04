@@ -6,6 +6,7 @@ module ExceptionHandler
   class MissingToken < StandardError; end
   class InvalidToken < StandardError; end
   class Forbidden < StandardError; end
+  class PasswordNotBlank < StandardError; end
 
   included do
     # define custom handlers
@@ -15,6 +16,7 @@ module ExceptionHandler
     rescue_from ExceptionHandler::InvalidToken, with: :four_twenty_two
     rescue_from ActiveRecord::RecordNotFound, with: :four_zero_four
     rescue_from ExceptionHandler::Forbidden, with: :four_zero_three
+    rescue_from ExceptionHandler::PasswordNotBlank, with: :four_twenty_two
   end
 
   private
@@ -26,6 +28,9 @@ module ExceptionHandler
     case message
     when /Access is not included/
       message = "Access must be any of 'private', 'public' or 'role_based'"
+
+    when /PasswordNotBlank/
+      message = "Password can't be blank"
     end
 
     json_response({ message: message }, :unprocessable_entity)

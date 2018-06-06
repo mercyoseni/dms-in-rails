@@ -9,7 +9,10 @@ Rails.application.routes.draw do
       post 'signup', to: 'users#create'
 
       namespace 'admin' do
-        resources :users
+        resources :users do
+          get 'documents', to: 'documents#user_documents'
+        end
+
         resources :documents
       end
     end

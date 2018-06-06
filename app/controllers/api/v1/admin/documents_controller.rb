@@ -1,5 +1,6 @@
 class Api::V1::Admin::DocumentsController < ApplicationController
   before_action :find_document, only: [:show, :update, :destroy]
+  before_action :find_user, only: [:user_documents]
 
   def index
     documents = Document.all.order('created_at ASC')
@@ -30,6 +31,19 @@ class Api::V1::Admin::DocumentsController < ApplicationController
     json_response(response)
   end
 
+  # enable admin to view a specific user's documents
+  def user_documents
+    documents = @user.documents.order('created_at ASC')
+
+    if documents.size > 0
+      response = { message: Message.loaded_documents, data: documents }
+    else
+      response = { message: Message.no_documents }
+    end
+
+    json_response(response)
+  end
+
   private
 
   def find_document
@@ -38,5 +52,9 @@ class Api::V1::Admin::DocumentsController < ApplicationController
 
   def document_params
     params.permit(:title, :body, :access)
+  end
+
+  def find_user
+    @user = User.find(params[:user_id])
   end
 end

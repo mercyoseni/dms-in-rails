@@ -86,4 +86,8 @@ class Message
   def self.created_user
     'Created user successfully'
   end
+
+  def self.no_documents
+    'User has no documents'
+  end
 end

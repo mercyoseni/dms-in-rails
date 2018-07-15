@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     end
   end
 
+  root to: 'home#index'
   match '*path', to: 'application#not_found', via: :all
 end

@@ -1,4 +1,5 @@
 class Api::V1::Admin::DocumentsController < ApplicationController
+  before_action :require_admin
   before_action :find_document, only: [:show, :update, :destroy]
   before_action :find_user, only: [:user_documents]
 
@@ -45,6 +46,10 @@ class Api::V1::Admin::DocumentsController < ApplicationController
   end
 
   private
+
+  def require_admin
+    raise ExceptionHandler::Forbidden unless current_user.role == 'admin'
+  end
 
   def find_document
     @document = Document.find(params[:id])

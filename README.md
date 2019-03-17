@@ -47,6 +47,7 @@ The following features make up the Document Management System API:
 * Clone the project repository from your terminal `git clone https://github.com/andela-moseni/dms-in-rails.git`
 * Change directory into the `dms-in-rails` directory
 * Run `bundle install` to install the dependencies in the `Gemfile`
+* Run `rails db:setup` to create database, run migrations and seed data
 * Run `rails s` to start the project
 * Use [Postman](https://www.getpostman.com/) or any API testing tool of your choice to access the endpoints
 

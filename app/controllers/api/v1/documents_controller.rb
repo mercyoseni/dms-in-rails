@@ -3,10 +3,7 @@ class Api::V1::DocumentsController < ApplicationController
   before_action :is_current_user_document, only: [:update, :destroy]
 
   def index
-    documents =
-      current_user_and_public_documents + current_user_role_based_documents
-
-    response = resource_serializer(resource, documents)
+    response = resource_serializer(resource, accessible_documents)
 
     json_response(response)
   end
@@ -36,6 +33,10 @@ class Api::V1::DocumentsController < ApplicationController
   end
 
   private
+
+  def accessible_documents
+    current_user_and_public_documents + current_user_role_based_documents
+  end
 
   def is_current_user_document
     if @document.user_id != current_user.id

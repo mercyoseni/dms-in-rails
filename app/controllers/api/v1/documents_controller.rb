@@ -32,6 +32,20 @@ class Api::V1::DocumentsController < ApplicationController
     @document.destroy
   end
 
+  def get_related_resources
+    # Display only public or role_based docs to current_user
+    user_documents = User.find(params[:user_id]).documents
+    documents = []
+
+    accessible_documents.map do |document|
+      documents << document if user_documents.include?(document)
+    end
+
+    response = resource_serializer(resource, documents)
+
+    json_response(response)
+  end
+
   private
 
   def accessible_documents

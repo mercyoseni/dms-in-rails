@@ -50,6 +50,11 @@ class Api::V1::UsersController < ApplicationController
     current_user.destroy
   end
 
+  def get_related_resource
+    response = resource_serializer(resource, current_user)
+    json_response(response)
+  end
+
   private
 
   def resource

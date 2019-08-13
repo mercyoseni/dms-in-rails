@@ -5,7 +5,6 @@ class User < ApplicationRecord
 
   validates_presence_of :firstname, :lastname, :email
   validates_uniqueness_of :email
-  validates_length_of :email, in: 6..50
   validates_length_of :password, in: 6..20, if: :password
   validates_presence_of :password_confirmation, if: :password
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i

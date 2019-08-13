@@ -16,6 +16,8 @@ class User < ApplicationRecord
     User.select('id, firstname, lastname, email').order('created_at ASC')
   end
 
+  scope :admin_users, -> { User.all.order('created_at ASC') }
+
   private
 
   def set_role

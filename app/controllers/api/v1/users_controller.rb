@@ -40,8 +40,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update
-    @user.update_attributes!(user_params)
-    response = resource_serializer(resource, @user)
+    current_user.update_attributes!(user_params)
+    response = resource_serializer(resource, current_user)
 
     json_response(response)
   end
@@ -67,7 +67,7 @@ class Api::V1::UsersController < ApplicationController
       raise(ExceptionHandler::Forbidden)
     end
 
-    @user = current_user
+    current_user
   end
 
   def check_password_params

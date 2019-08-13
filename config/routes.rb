@@ -1,20 +1,13 @@
 Rails.application.routes.draw do
   post 'auth/login', to: 'authentication#authenticate'
 
-  namespace 'api' do
-    namespace 'v1' do
-      resources :users, except: :create
-      resources :documents
+  namespace :api do
+    namespace :v1 do
 
       post 'signup', to: 'users#create'
 
-      namespace 'admin' do
-        resources :users do
-          get 'documents', to: 'documents#user_documents'
-        end
-
-        resources :documents
-      end
+      jsonapi_resources :users, except: :create
+      jsonapi_resources :documents
     end
   end
 

@@ -4,15 +4,11 @@ class Api::V1::UsersController < ApplicationController
   before_action :check_password_params, only: :update
 
   def index
-    users = User.refined_users
-    serialized_users =
-      users.map { |user| Api::V1::UserResource.new(user, nil) }
-    response = JSONAPI::ResourceSerializer.new(
-      Api::V1::UserResource,
-      fields: {
-        users: [:firstname, :lastname, :email]
-      }
-    ).serialize_to_hash(serialized_users)
+    response = resource_serializer(
+      resource,
+      User.refined_users,
+      { fields: { users: [:firstname, :lastname, :email] } },
+    )
 
     json_response(response)
   end
@@ -20,16 +16,14 @@ class Api::V1::UsersController < ApplicationController
   def show
     if current_user.id.to_s == params[:id]
       user = User.find(params[:id])
-      response = JSONAPI::ResourceSerializer.new(Api::V1::UserResource)
-        .serialize_to_hash(Api::V1::UserResource.new(user, nil))
+      response = resource_serializer(resource, user)
     else
       user = User.refined_users.find(params[:id])
-      response = JSONAPI::ResourceSerializer.new(
-        Api::V1::UserResource,
-        fields: {
-          users: [:firstname, :lastname, :email]
-        }
-      ).serialize_to_hash(Api::V1::UserResource.new(user, nil))
+      response = resource_serializer(
+        resource,
+        user,
+        { fields: { users: [:firstname, :lastname, :email] } }
+      )
     end
 
     json_response(response)
@@ -47,13 +41,16 @@ class Api::V1::UsersController < ApplicationController
 
   def update
     @user.update_attributes!(user_params)
-    response = JSONAPI::ResourceSerializer.new(Api::V1::UserResource)
-      .serialize_to_hash(Api::V1::UserResource.new(@user, nil))
+    response = resource_serializer(resource, @user)
 
     json_response(response)
   end
 
   private
+
+  def resource
+    Api::V1::UserResource
+  end
 
   def user_params
     params.require(:data).require(:attributes).permit(

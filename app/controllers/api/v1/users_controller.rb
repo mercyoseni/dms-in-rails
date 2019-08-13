@@ -66,8 +66,11 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def is_current_user
-    raise(ExceptionHandler::Forbidden) unless @current_user.id.to_s == params[:id]
-    @user = @current_user
+    if current_user.id.to_s != params[:id]
+      raise(ExceptionHandler::Forbidden)
+    end
+
+    @user = current_user
   end
 
   def check_password_params

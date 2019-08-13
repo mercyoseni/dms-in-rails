@@ -11,6 +11,10 @@ class User < ApplicationRecord
 
   before_create :set_role
 
+  scope :refined_users, -> do
+    User.select('id, firstname, lastname, email').order('created_at ASC')
+  end
+
   private
 
   def set_role

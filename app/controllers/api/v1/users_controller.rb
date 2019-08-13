@@ -46,6 +46,10 @@ class Api::V1::UsersController < ApplicationController
     json_response(response)
   end
 
+  def destroy
+    current_user.destroy
+  end
+
   private
 
   def resource

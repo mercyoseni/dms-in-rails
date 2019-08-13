@@ -71,6 +71,9 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def check_password_params
-    raise(ExceptionHandler::PasswordNotBlank) if params[:password] && params[:password].blank?
+    if params[:data][:attributes][:password] &&
+      params[:data][:attributes][:password].blank?
+      raise(ExceptionHandler::PasswordNotBlank)
+    end
   end
 end

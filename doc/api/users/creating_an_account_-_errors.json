@@ -1,0 +1,43 @@
+{
+  "resource": "Users",
+  "resource_explanation": "A user needs to signup to get started",
+  "http_method": "POST",
+  "route": "/api/v1/signup",
+  "description": "Creating an account - errors",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/signup",
+      "request_body": "data[type]=users&data[attributes][firstname]=Foo&data[attributes][lastname]=Bar&data[attributes][email]=hhh&data[attributes][password]=password&data[attributes][password_confirmation]=password",
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Authorization": "",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"message\": \"Validation failed: Email is invalid\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "53a209e7-9d5e-4c1e-9c10-8c6e60764f54",
+        "X-Runtime": "0.006104",
+        "Content-Length": "49"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

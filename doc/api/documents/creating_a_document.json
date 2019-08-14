@@ -1,0 +1,44 @@
+{
+  "resource": "Documents",
+  "resource_explanation": "Creating a document for current user",
+  "http_method": "POST",
+  "route": "/api/v1/documents",
+  "description": "Creating a document",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/documents",
+      "request_body": "data[type]=documents&data[attributes][title]=Lorem&data[attributes][body]=Ipsum+dolor&data[attributes][access]=private",
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNzEzLCJleHAiOjE1NjU4Njc2OTh9.h6ae8LOHqn_GNRhBOwHXfb7ObE4bve1EwJDhwYnwdGk",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"data\": [\n    {\n      \"id\": \"1177\",\n      \"type\": \"documents\",\n      \"links\": {\n        \"self\": \"/api/v1/documents/1177\"\n      },\n      \"attributes\": {\n        \"title\": \"Lorem\",\n        \"body\": \"Ipsum dolor\",\n        \"access\": \"private\",\n        \"created-at\": \"2019-08-14T11:14:58.056Z\",\n        \"updated-at\": \"2019-08-14T11:14:58.056Z\"\n      },\n      \"relationships\": {\n        \"user\": {\n          \"links\": {\n            \"self\": \"/api/v1/documents/1177/relationships/user\",\n            \"related\": \"/api/v1/documents/1177/user\"\n          }\n        }\n      },\n      \"meta\": {\n        \"copyright\": \"© 2019 MDS - MeekDocMgtSystem, Inc.\"\n      }\n    }\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"9c1d6b2a7e1935f6e71efadf0def80de\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "1d905220-1dbb-497d-97c2-ec1eb7650436",
+        "X-Runtime": "0.013444",
+        "Content-Length": "424"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

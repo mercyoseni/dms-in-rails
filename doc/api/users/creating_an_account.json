@@ -1,0 +1,44 @@
+{
+  "resource": "Users",
+  "resource_explanation": "A user needs to signup to get started",
+  "http_method": "POST",
+  "route": "/api/v1/signup",
+  "description": "Creating an account",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/signup",
+      "request_body": "data[type]=users&data[attributes][firstname]=Foo&data[attributes][lastname]=Bar&data[attributes][email]=foo%40bar.test&data[attributes][password]=password&data[attributes][password_confirmation]=password",
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Authorization": "",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"message\": \"Account created successfully\",\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNzM2LCJleHAiOjE1NjU4Njc2OTh9.WTPtTpxb-SWO0TmeAUm-fk0F7UHZdg1Cf8k6XmUcgB4\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"3e4e60d5395261c38adf1218b799de3d\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "c60758f7-1a83-4a8c-9a07-409e2c5f6fb7",
+        "X-Runtime": "0.010040",
+        "Content-Length": "167"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

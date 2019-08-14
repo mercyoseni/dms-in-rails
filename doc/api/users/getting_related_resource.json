@@ -1,0 +1,43 @@
+{
+  "resource": "Users",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/api/v1/documents/:document_id/user",
+  "description": "Getting related resource",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/documents/1198/user",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNzQ4LCJleHAiOjE1NjU4Njc2OTh9.YIgCH8OeHfX0n3eNuADP0AOzVT37kQq63o5stYhz4_k",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"data\": [\n    {\n      \"id\": \"2748\",\n      \"type\": \"users\",\n      \"links\": {\n        \"self\": \"/api/v1/users/2748\"\n      },\n      \"attributes\": {\n        \"firstname\": \"Jacqulyn\",\n        \"lastname\": \"Cronin\",\n        \"email\": \"dylansenger@christiansen.info\",\n        \"role\": \"contributor\",\n        \"created-at\": \"2019-08-14T11:14:58.507Z\",\n        \"updated-at\": \"2019-08-14T11:14:58.507Z\"\n      },\n      \"relationships\": {\n        \"documents\": {\n          \"links\": {\n            \"self\": \"/api/v1/users/2748/relationships/documents\",\n            \"related\": \"/api/v1/users/2748/documents\"\n          }\n        }\n      },\n      \"meta\": {\n        \"copyright\": \"© 2019 MDS - MeekDocMgtSystem, Inc.\"\n      }\n    }\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"5cbf639b6b23aa3c3ae2a05828c6922f\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "49c6193b-9c92-4847-a4bb-9645db049f04",
+        "X-Runtime": "0.005841",
+        "Content-Length": "471"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

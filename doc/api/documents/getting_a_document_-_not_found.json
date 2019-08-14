@@ -1,0 +1,43 @@
+{
+  "resource": "Documents",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/documents/:id",
+  "description": "Getting a document - not found",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/documents/0",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNzIzLCJleHAiOjE1NjU4Njc2OTh9.5LuPArHRPqsVitMi7X7zc3r6ZWSRG64YIQgZ2dulRnI",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/vnd.api+json",
+      "response_status": 404,
+      "response_status_text": "Not Found",
+      "response_body": "{\n  \"message\": \"Sorry, record not found.\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "33ed8831-fb51-4e54-9198-d2d8bba158bd",
+        "X-Runtime": "0.002781",
+        "Content-Length": "38"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

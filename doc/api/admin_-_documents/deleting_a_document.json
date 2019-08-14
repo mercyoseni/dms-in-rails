@@ -1,0 +1,41 @@
+{
+  "resource": "Admin - Documents",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "api/v1/admin/documents/:id",
+  "description": "Deleting a document",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "api/v1/admin/documents/1171",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNjkyLCJleHAiOjE1NjU4Njc2OTd9.dQ8yBgPbBYl1A9w5HUnTj78420RqDpcxNLCXX84TMQk",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "722cf856-44bf-4ffa-8d25-3f561d7b7b61",
+        "X-Runtime": "0.003269"
+      },
+      "response_content_type": null,
+      "curl": null
+    }
+  ]
+}

@@ -1,0 +1,343 @@
+{
+  "resources": [
+    {
+      "name": "Admin - Documents",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Accessible for only an admin",
+          "link": "admin_-_documents/accessible_for_only_an_admin.json",
+          "groups": "all",
+          "route": "/api/v1/admin/documents",
+          "method": "get"
+        },
+        {
+          "description": "Creating a document",
+          "link": "admin_-_documents/creating_a_document.json",
+          "groups": "all",
+          "route": "/api/v1/admin/documents",
+          "method": "post"
+        },
+        {
+          "description": "Creating a document - errors",
+          "link": "admin_-_documents/creating_a_document_-_errors.json",
+          "groups": "all",
+          "route": "/api/v1/admin/documents",
+          "method": "post"
+        },
+        {
+          "description": "Deleting a document",
+          "link": "admin_-_documents/deleting_a_document.json",
+          "groups": "all",
+          "route": "api/v1/admin/documents/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Deleting a document - not found",
+          "link": "admin_-_documents/deleting_a_document_-_not_found.json",
+          "groups": "all",
+          "route": "api/v1/admin/documents/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Geting all documents",
+          "link": "admin_-_documents/geting_all_documents.json",
+          "groups": "all",
+          "route": "/api/v1/admin/documents",
+          "method": "get"
+        },
+        {
+          "description": "Geting all documents - errors",
+          "link": "admin_-_documents/geting_all_documents_-_errors.json",
+          "groups": "all",
+          "route": "/api/v1/admin/documents",
+          "method": "get"
+        },
+        {
+          "description": "Getting a document",
+          "link": "admin_-_documents/getting_a_document.json",
+          "groups": "all",
+          "route": "api/v1/admin/documents/:id",
+          "method": "get"
+        },
+        {
+          "description": "Getting a document - not found",
+          "link": "admin_-_documents/getting_a_document_-_not_found.json",
+          "groups": "all",
+          "route": "api/v1/admin/documents/:id",
+          "method": "get"
+        },
+        {
+          "description": "Updating a document",
+          "link": "admin_-_documents/updating_a_document.json",
+          "groups": "all",
+          "route": "api/v1/admin/documents/:id",
+          "method": "put"
+        },
+        {
+          "description": "Updating a document - not found",
+          "link": "admin_-_documents/updating_a_document_-_not_found.json",
+          "groups": "all",
+          "route": "api/v1/admin/documents/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Admin - Users",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Accessible for only an admin",
+          "link": "admin_-_users/accessible_for_only_an_admin.json",
+          "groups": "all",
+          "route": "/api/v1/admin/users",
+          "method": "get"
+        },
+        {
+          "description": "Creating a user",
+          "link": "admin_-_users/creating_a_user.json",
+          "groups": "all",
+          "route": "/api/v1/admin/users",
+          "method": "post"
+        },
+        {
+          "description": "Creating a user - errors",
+          "link": "admin_-_users/creating_a_user_-_errors.json",
+          "groups": "all",
+          "route": "/api/v1/admin/users",
+          "method": "post"
+        },
+        {
+          "description": "Deleting a user",
+          "link": "admin_-_users/deleting_a_user.json",
+          "groups": "all",
+          "route": "api/v1/admin/users/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Deleting a user - not found",
+          "link": "admin_-_users/deleting_a_user_-_not_found.json",
+          "groups": "all",
+          "route": "api/v1/admin/users/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Geting all users",
+          "link": "admin_-_users/geting_all_users.json",
+          "groups": "all",
+          "route": "/api/v1/admin/users",
+          "method": "get"
+        },
+        {
+          "description": "Geting all users - errors",
+          "link": "admin_-_users/geting_all_users_-_errors.json",
+          "groups": "all",
+          "route": "/api/v1/admin/users",
+          "method": "get"
+        },
+        {
+          "description": "Getting a user",
+          "link": "admin_-_users/getting_a_user.json",
+          "groups": "all",
+          "route": "api/v1/admin/users/:id",
+          "method": "get"
+        },
+        {
+          "description": "Getting a user - not found",
+          "link": "admin_-_users/getting_a_user_-_not_found.json",
+          "groups": "all",
+          "route": "api/v1/admin/users/:id",
+          "method": "get"
+        },
+        {
+          "description": "Getting related resource",
+          "link": "admin_-_users/getting_related_resource.json",
+          "groups": "all",
+          "route": "/api/v1/admin/documents/:document_id/user",
+          "method": "get"
+        },
+        {
+          "description": "Updating a user",
+          "link": "admin_-_users/updating_a_user.json",
+          "groups": "all",
+          "route": "api/v1/admin/users/:id",
+          "method": "put"
+        },
+        {
+          "description": "Updating a user - not found",
+          "link": "admin_-_users/updating_a_user_-_not_found.json",
+          "groups": "all",
+          "route": "api/v1/admin/users/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Documents",
+      "explanation": "Creating a document for current user",
+      "examples": [
+        {
+          "description": "Creating a document",
+          "link": "documents/creating_a_document.json",
+          "groups": "all",
+          "route": "/api/v1/documents",
+          "method": "post"
+        },
+        {
+          "description": "Creating a document - errors",
+          "link": "documents/creating_a_document_-_errors.json",
+          "groups": "all",
+          "route": "/api/v1/documents",
+          "method": "post"
+        },
+        {
+          "description": "Deleting a document",
+          "link": "documents/deleting_a_document.json",
+          "groups": "all",
+          "route": "api/v1/documents/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Deleting a document - unauthorized",
+          "link": "documents/deleting_a_document_-_unauthorized.json",
+          "groups": "all",
+          "route": "api/v1/documents/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Geting all documents",
+          "link": "documents/geting_all_documents.json",
+          "groups": "all",
+          "route": "/api/v1/documents",
+          "method": "get"
+        },
+        {
+          "description": "Geting all documents - errors",
+          "link": "documents/geting_all_documents_-_errors.json",
+          "groups": "all",
+          "route": "/api/v1/documents",
+          "method": "get"
+        },
+        {
+          "description": "Getting a document",
+          "link": "documents/getting_a_document.json",
+          "groups": "all",
+          "route": "api/v1/documents/:id",
+          "method": "get"
+        },
+        {
+          "description": "Getting a document - not found",
+          "link": "documents/getting_a_document_-_not_found.json",
+          "groups": "all",
+          "route": "api/v1/documents/:id",
+          "method": "get"
+        },
+        {
+          "description": "Getting related resources",
+          "link": "documents/getting_related_resources.json",
+          "groups": "all",
+          "route": "/api/v1/users/:user_id/documents",
+          "method": "get"
+        },
+        {
+          "description": "Updating a document",
+          "link": "documents/updating_a_document.json",
+          "groups": "all",
+          "route": "api/v1/documents/:id",
+          "method": "put"
+        },
+        {
+          "description": "Updating a document - unauthorized",
+          "link": "documents/updating_a_document_-_unauthorized.json",
+          "groups": "all",
+          "route": "api/v1/documents/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "explanation": "A user needs to signup to get started",
+      "examples": [
+        {
+          "description": "Creating an account",
+          "link": "users/creating_an_account.json",
+          "groups": "all",
+          "route": "/api/v1/signup",
+          "method": "post"
+        },
+        {
+          "description": "Creating an account - errors",
+          "link": "users/creating_an_account_-_errors.json",
+          "groups": "all",
+          "route": "/api/v1/signup",
+          "method": "post"
+        },
+        {
+          "description": "Deleting a user",
+          "link": "users/deleting_a_user.json",
+          "groups": "all",
+          "route": "api/v1/users/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Deleting a user - unauthorized",
+          "link": "users/deleting_a_user_-_unauthorized.json",
+          "groups": "all",
+          "route": "api/v1/users/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Geting all users",
+          "link": "users/geting_all_users.json",
+          "groups": "all",
+          "route": "/api/v1/users",
+          "method": "get"
+        },
+        {
+          "description": "Geting all users - errors",
+          "link": "users/geting_all_users_-_errors.json",
+          "groups": "all",
+          "route": "/api/v1/users",
+          "method": "get"
+        },
+        {
+          "description": "Getting a user",
+          "link": "users/getting_a_user.json",
+          "groups": "all",
+          "route": "api/v1/users/:id",
+          "method": "get"
+        },
+        {
+          "description": "Getting a user - not found",
+          "link": "users/getting_a_user_-_not_found.json",
+          "groups": "all",
+          "route": "api/v1/users/:id",
+          "method": "get"
+        },
+        {
+          "description": "Getting related resource",
+          "link": "users/getting_related_resource.json",
+          "groups": "all",
+          "route": "/api/v1/documents/:document_id/user",
+          "method": "get"
+        },
+        {
+          "description": "Updating a user",
+          "link": "users/updating_a_user.json",
+          "groups": "all",
+          "route": "api/v1/users/:id",
+          "method": "put"
+        },
+        {
+          "description": "Updating a user - unauthorized",
+          "link": "users/updating_a_user_-_unauthorized.json",
+          "groups": "all",
+          "route": "api/v1/users/:id",
+          "method": "put"
+        }
+      ]
+    }
+  ]
+}

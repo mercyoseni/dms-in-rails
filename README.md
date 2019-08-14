@@ -33,8 +33,8 @@ The following features make up the Document Management System API:
 - It allows users on the same role to retrieve role-based documents
 
 ## Hosted App on Heroku
-[dms-api-in-rails-api](https://dms-api-in-rails.herokuapp.com/)
-[API Documentation](https://dms-api-in-rails.herokuapp.com/api/docs)
+- [dms-api-in-rails-api](https://dms-api-in-rails.herokuapp.com/)
+- [DMS API Documentation](https://dms-api-in-rails.herokuapp.com/api/docs)
 
 ### **Getting Started**
 * Ensure you have `ruby` and `rails` installed or install [Ruby](https://www.ruby-lang.org/en/documentation/installation/) and [Rails](https://rubygems.org/gems/rails)

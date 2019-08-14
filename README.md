@@ -1,6 +1,6 @@
 ## Document Management System (API)
 
-Document Management System provides a restful API for users to create and manage documents giving different privileges based on user roles and managing authentication using JWT. **Updated to comply with [json:api](https://jsonapi.org) specification.**
+Document Management System provides a restful API for users to create and manage documents, giving different privileges based on user roles. Uses JWT for authentication. **Updated to comply with [json:api](https://jsonapi.org) specification.**
 
 ## API Documentation
 The API has routes, each dedicated to a single task that uses HTTP response codes to indicate API status and errors.

@@ -1,0 +1,42 @@
+{
+  "resource": "Admin - Users",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/api/v1/admin/users",
+  "description": "Accessible for only an admin",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/admin/users",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNjk3LCJleHAiOjE1NjU4Njc2OTd9.o3VgW9I3te-IeuXPkgKir6IN5aXC-UcfYOpZmjyOljE",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": null,
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": "{\n  \"message\": \"You are not allowed to perform this action\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "41ef0202-0b4c-44a4-a1ef-25abb0fff45d",
+        "X-Runtime": "0.004661",
+        "Content-Length": "56"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

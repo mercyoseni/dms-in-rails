@@ -1,0 +1,44 @@
+{
+  "resource": "Admin - Users",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/v1/admin/users/:id",
+  "description": "Getting a user",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/v1/admin/users/2703",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNzAzLCJleHAiOjE1NjU4Njc2OTd9.QMijl6lMMQGBEAp5PbdVtdC9kfIrIlhDOM2tId9M1IU",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/vnd.api+json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"data\": [\n    {\n      \"id\": \"2703\",\n      \"type\": \"users\",\n      \"links\": {\n        \"self\": \"/api/v1/admin/users/2703\"\n      },\n      \"attributes\": {\n        \"firstname\": \"Tatum\",\n        \"lastname\": \"Wilderman\",\n        \"email\": \"christoperboehm@kirlinratke.co\",\n        \"role\": \"admin\",\n        \"created-at\": \"2019-08-14T11:14:57.892Z\",\n        \"updated-at\": \"2019-08-14T11:14:57.894Z\"\n      },\n      \"meta\": {\n        \"copyright\": \"© 2019 MDS - MeekDocMgtSystem, Inc.\"\n      }\n    }\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"ebfbc762834ccc69794664a0f4806592\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "629935e6-6837-4a1e-a3c1-7cf48a9c2c13",
+        "X-Runtime": "0.003297",
+        "Content-Length": "337"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

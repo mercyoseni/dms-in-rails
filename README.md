@@ -1,6 +1,6 @@
 ## Document Management System (API)
 
-Document Management System provides a restful API for users to create and manage documents giving different privileges based on user roles and managing authentication using JWT. **Updated to comply with [json:api](https://jsonapi.org) specification.**
+Document Management System provides a restful API for users to create and manage documents, giving different privileges based on user roles. Uses JWT for authentication. **Updated to comply with [json:api](https://jsonapi.org) specification.**
 
 ## API Documentation
 The API has routes, each dedicated to a single task that uses HTTP response codes to indicate API status and errors.
@@ -34,9 +34,7 @@ The following features make up the Document Management System API:
 
 ## Hosted App on Heroku
 [dms-api-in-rails-api](https://dms-api-in-rails.herokuapp.com/)
-
-## API Documentation
-- *View API endpoints and their functions (still in progress)*
+[API Documentation](https://dms-api-in-rails.herokuapp.com/api/docs)
 
 ### **Getting Started**
 * Ensure you have `ruby` and `rails` installed or install [Ruby](https://www.ruby-lang.org/en/documentation/installation/) and [Rails](https://rubygems.org/gems/rails)

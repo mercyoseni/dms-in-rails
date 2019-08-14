@@ -1,0 +1,43 @@
+{
+  "resource": "Documents",
+  "resource_explanation": "Creating a document for current user",
+  "http_method": "POST",
+  "route": "/api/v1/documents",
+  "description": "Creating a document - errors",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/documents",
+      "request_body": "data[type]=documents&data[attributes][title]=Lorem&data[attributes][body]=Ipsum+dolor&data[attributes][access]=",
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNzE1LCJleHAiOjE1NjU4Njc2OTh9.VU6avkjqQn-28E-9pDxb9Iim32_K_kcGVnkyy3TUgjI",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"message\": \"Access must be any of 'private', 'public' or 'role_based'\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "22e3e930-3f54-4745-97b7-feca46e7138f",
+        "X-Runtime": "0.004619",
+        "Content-Length": "71"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

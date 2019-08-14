@@ -1,0 +1,43 @@
+{
+  "resource": "Admin - Documents",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "/api/v1/admin/documents",
+  "description": "Creating a document - errors",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/admin/documents",
+      "request_body": "data[type]=documents&data[attributes][title]=&data[attributes][body]=Ipsum+dolor&data[attributes][access]=public",
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNjc4LCJleHAiOjE1NjU4Njc2OTd9.chJ2W6a29tpP6xaCZjWeFhKQPLqk2FqPr9L5cqB2eu4",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"message\": \"Validation failed: Title can't be blank, Title is too short (minimum is 5 characters)\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "fce4dd4f-b3d7-45c5-9e29-df5dae85dee5",
+        "X-Runtime": "0.005490",
+        "Content-Length": "99"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "resource": "Admin - Documents",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/api/v1/admin/documents",
+  "description": "Geting all documents",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/admin/documents",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNjgyLCJleHAiOjE1NjU4Njc2OTd9.TJmjZE494J3mB1yuV6-1-5F1mNFSnc8uQLo7xF0UB_Y",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/vnd.api+json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"data\": [\n    {\n      \"id\": \"1160\",\n      \"type\": \"documents\",\n      \"links\": {\n        \"self\": \"/api/v1/admin/documents/1160\"\n      },\n      \"attributes\": {\n        \"title\": \"An Evil Cradling\",\n        \"body\": \"Laboriosam et dolorem. Est voluptatem non. Porro dolorem non.\",\n        \"access\": \"public\",\n        \"created-at\": \"2019-08-14T11:14:57.598Z\",\n        \"updated-at\": \"2019-08-14T11:14:57.598Z\"\n      },\n      \"relationships\": {\n        \"user\": {\n          \"links\": {\n            \"self\": \"/api/v1/admin/documents/1160/relationships/user\",\n            \"related\": \"/api/v1/admin/documents/1160/user\"\n          }\n        }\n      },\n      \"meta\": {\n        \"copyright\": \"© 2019 MDS - MeekDocMgtSystem, Inc.\"\n      }\n    },\n    {\n      \"id\": \"1161\",\n      \"type\": \"documents\",\n      \"links\": {\n        \"self\": \"/api/v1/admin/documents/1161\"\n      },\n      \"attributes\": {\n        \"title\": \"To Sail Beyond the Sunset\",\n        \"body\": \"Sit minima hic. Voluptatum in illum. Voluptas excepturi minus.\",\n        \"access\": \"public\",\n        \"created-at\": \"2019-08-14T11:14:57.604Z\",\n        \"updated-at\": \"2019-08-14T11:14:57.604Z\"\n      },\n      \"relationships\": {\n        \"user\": {\n          \"links\": {\n            \"self\": \"/api/v1/admin/documents/1161/relationships/user\",\n            \"related\": \"/api/v1/admin/documents/1161/user\"\n          }\n        }\n      },\n      \"meta\": {\n        \"copyright\": \"© 2019 MDS - MeekDocMgtSystem, Inc.\"\n      }\n    }\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"797800654b17c748adeef826bebb3531\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "c4e045ce-623e-465e-9655-8466f1f42946",
+        "X-Runtime": "0.005908",
+        "Content-Length": "1004"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

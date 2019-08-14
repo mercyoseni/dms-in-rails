@@ -1,0 +1,44 @@
+{
+  "resource": "Admin - Users",
+  "resource_explanation": "An admin can create a user",
+  "http_method": "POST",
+  "route": "/api/v1/admin/users",
+  "description": "Creating a user",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/admin/users",
+      "request_body": "data[type]=users&data[attributes][firstname]=Foo&data[attributes][lastname]=Bar&data[attributes][email]=foo%40bar.test&data[attributes][password]=password&data[attributes][password_confirmation]=password",
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNjk4LCJleHAiOjE1NjU4Njc2OTd9.n6WDDz3gi1FSsL-beInKXV1MGfwKGmIcTpSFQVX0hYQ",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"message\": \"Created user successfully\",\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNjk5LCJleHAiOjE1NjU4Njc2OTd9.F0u3mCOPnZlrMqSYRwn5F1jo5L4Kc7OpPUgyccFaU6A\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"f0c6faa2c12f07c38274f8aeb4ef4b0d\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "d24a56b9-5779-41b8-8e4f-fa4aa338570c",
+        "X-Runtime": "0.009161",
+        "Content-Length": "164"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

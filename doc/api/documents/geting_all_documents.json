@@ -1,0 +1,44 @@
+{
+  "resource": "Documents",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/api/v1/documents",
+  "description": "Geting all documents",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/documents",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNzE5LCJleHAiOjE1NjU4Njc2OTh9.XESFcZiumQdqgV2qb_92oLsfmPD6MLDsSGuUeenvBT4",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/vnd.api+json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"data\": [\n    {\n      \"id\": \"1182\",\n      \"type\": \"documents\",\n      \"links\": {\n        \"self\": \"/api/v1/documents/1182\"\n      },\n      \"attributes\": {\n        \"title\": \"A Time of Gifts\",\n        \"body\": \"Accusantium eum natus. Nesciunt nostrum alias. Occaecati error praesentium.\",\n        \"access\": \"public\",\n        \"created-at\": \"2019-08-14T11:14:58.125Z\",\n        \"updated-at\": \"2019-08-14T11:14:58.125Z\"\n      },\n      \"relationships\": {\n        \"user\": {\n          \"links\": {\n            \"self\": \"/api/v1/documents/1182/relationships/user\",\n            \"related\": \"/api/v1/documents/1182/user\"\n          }\n        }\n      },\n      \"meta\": {\n        \"copyright\": \"© 2019 MDS - MeekDocMgtSystem, Inc.\"\n      }\n    },\n    {\n      \"id\": \"1183\",\n      \"type\": \"documents\",\n      \"links\": {\n        \"self\": \"/api/v1/documents/1183\"\n      },\n      \"attributes\": {\n        \"title\": \"The Millstone\",\n        \"body\": \"Consequatur deserunt impedit. Corporis at perferendis. Amet est ut.\",\n        \"access\": \"public\",\n        \"created-at\": \"2019-08-14T11:14:58.131Z\",\n        \"updated-at\": \"2019-08-14T11:14:58.131Z\"\n      },\n      \"relationships\": {\n        \"user\": {\n          \"links\": {\n            \"self\": \"/api/v1/documents/1183/relationships/user\",\n            \"related\": \"/api/v1/documents/1183/user\"\n          }\n        }\n      },\n      \"meta\": {\n        \"copyright\": \"© 2019 MDS - MeekDocMgtSystem, Inc.\"\n      }\n    }\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"eb555dc76aee6b872c91b6967d5f064f\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "5ad1ad48-c7ea-446e-b018-d310c675c36d",
+        "X-Runtime": "0.012487",
+        "Content-Length": "974"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

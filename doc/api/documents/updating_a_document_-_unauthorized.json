@@ -1,0 +1,43 @@
+{
+  "resource": "Documents",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "api/v1/documents/:id",
+  "description": "Updating a document - unauthorized",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "api/v1/documents/1191",
+      "request_body": "data[type]=documents&data[attributes][title]=Change+title",
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNzI3LCJleHAiOjE1NjU4Njc2OTh9.m0XxbSTaGoCW2Me_RA8DA07OYP2mFg2QVhR6GLOtn2U",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": "{\n  \"message\": \"You are not allowed to perform this action\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "33438836-6fac-420c-80ff-b8d97728e8fb",
+        "X-Runtime": "0.002865",
+        "Content-Length": "56"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

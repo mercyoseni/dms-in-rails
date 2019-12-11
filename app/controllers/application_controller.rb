@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  include JSONAPI::ActsAsResourceController
   include Response
   include ExceptionHandler
 
@@ -17,5 +18,15 @@ class ApplicationController < ActionController::API
   # check for valid token and return user
   def authorize_request
     @current_user = (AuthorizeApiRequest.new(request.headers).call)[:user]
+  end
+
+  # DRY JSONAPI::ResourceSerializer
+  def resource_serializer(resource, data, option={})
+    resource_instance = Array.wrap(data).map do |instance|
+      resource.new(instance, nil)
+    end
+
+    JSONAPI::ResourceSerializer.new(resource, option)
+      .serialize_to_hash(resource_instance)
   end
 end

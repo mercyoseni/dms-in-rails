@@ -4,14 +4,12 @@ class Api::V1::Admin::UsersController < ApplicationController
   before_action :check_password_params, only: :update
 
   def index
-    users = User.all.order('created_at ASC').as_json(except: :password_digest)
-    response = { message: Message.loaded_users, data: users }
+    response = resource_serializer(resource, User.admin_users)
     json_response(response)
   end
 
   def show
-    @user = @user.as_json(except: :password_digest)
-    response = { message: Message.loaded_user, data: @user }
+    response = resource_serializer(resource, @user)
     json_response(response)
   end
 
@@ -20,29 +18,42 @@ class Api::V1::Admin::UsersController < ApplicationController
     user = User.create!(user_params)
     auth_token = AuthenticateUser.new(user.email, user.password).call
     response = { message: Message.created_user, auth_token: auth_token }
+
     json_response(response, :created)
   end
 
   def update
     @user.update_attributes!(user_params)
-    response = { message: Message.updated_user, data: @user }
+    response = resource_serializer(resource, @user)
+
     json_response(response)
   end
 
   def destroy
     @user.destroy
-    response = { message: Message.deleted_user }
+  end
+
+  def get_related_resource
+    user = Document.find(params[:document_id]).user
+    response = resource_serializer(resource, user)
+
     json_response(response)
   end
 
   private
 
+  def resource
+    Api::V1::Admin::UserResource
+  end
+
   def require_admin
-    raise ExceptionHandler::Forbidden unless current_user.role == 'admin'
+    if current_user.role != 'admin'
+      raise ExceptionHandler::Forbidden
+    end
   end
 
   def user_params
-    params.permit(
+    params.require(:data).require(:attributes).permit(
       :firstname,
       :lastname,
       :email,
@@ -57,6 +68,9 @@ class Api::V1::Admin::UsersController < ApplicationController
   end
 
   def check_password_params
-    raise(ExceptionHandler::PasswordNotBlank) if params[:password] && params[:password].blank?
+    if params[:data][:attributes][:password] &&
+      params[:data][:attributes][:password].blank?
+    raise(ExceptionHandler::PasswordNotBlank)
+    end
   end
 end

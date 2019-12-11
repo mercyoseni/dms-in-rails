@@ -1,0 +1,43 @@
+{
+  "resource": "Documents",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "api/v1/documents/:id",
+  "description": "Deleting a document - unauthorized",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "api/v1/documents/1195",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNzMxLCJleHAiOjE1NjU4Njc2OTh9.Hjv_NePOibuXSqSCF6R7z-KKGM1NfhM7TFmuxi8LwuI",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 403,
+      "response_status_text": "Forbidden",
+      "response_body": "{\n  \"message\": \"You are not allowed to perform this action\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "a23a242d-746d-4668-aedd-33db40ada167",
+        "X-Runtime": "0.004054",
+        "Content-Length": "56"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

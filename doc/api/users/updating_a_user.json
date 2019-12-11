@@ -1,0 +1,44 @@
+{
+  "resource": "Users",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "api/v1/users/:id",
+  "description": "Updating a user",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "api/v1/users/2742",
+      "request_body": "data[type]=users&data[attributes][firstname]=Updated",
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNzQyLCJleHAiOjE1NjU4Njc2OTh9.m-jGyS_G_axYQs61teSqgygDb4O9o8uIhFPdLxo-F5s",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"data\": [\n    {\n      \"id\": \"2742\",\n      \"type\": \"users\",\n      \"links\": {\n        \"self\": \"/api/v1/users/2742\"\n      },\n      \"attributes\": {\n        \"firstname\": \"Updated\",\n        \"lastname\": \"Schultz\",\n        \"email\": \"dorseysenger@mcdermott.biz\",\n        \"role\": \"regular\",\n        \"created-at\": \"2019-08-14T11:14:58.433Z\",\n        \"updated-at\": \"2019-08-14T11:14:58.442Z\"\n      },\n      \"relationships\": {\n        \"documents\": {\n          \"links\": {\n            \"self\": \"/api/v1/users/2742/relationships/documents\",\n            \"related\": \"/api/v1/users/2742/documents\"\n          }\n        }\n      },\n      \"meta\": {\n        \"copyright\": \"© 2019 MDS - MeekDocMgtSystem, Inc.\"\n      }\n    }\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"e1999d67353a6dc25e69812d35c7a904\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "06c527d3-bfd3-4372-a168-fcad4bc69bf5",
+        "X-Runtime": "0.007156",
+        "Content-Length": "464"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

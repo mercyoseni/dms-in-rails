@@ -1,6 +1,6 @@
 ## Document Management System (API)
 
-Document Management System provides a restful API for users to create and manage documents giving different privileges based on user roles and managing authentication using JWT.
+Document Management System provides a restful API for users to create and manage documents, giving different privileges based on user roles. Uses JWT for authentication. **Updated to comply with [json:api](https://jsonapi.org) specification.**
 
 ## API Documentation
 The API has routes, each dedicated to a single task that uses HTTP response codes to indicate API status and errors.
@@ -33,16 +33,10 @@ The following features make up the Document Management System API:
 - It allows users on the same role to retrieve role-based documents
 
 ## Hosted App on Heroku
-[dms-api-in-rails-api](https://dms-api-in-rails.herokuapp.com/)
+- [dms-api-in-rails-api](https://dms-api-in-rails.herokuapp.com/)
+- [DMS API Documentation](https://dms-api-in-rails.herokuapp.com/api/docs)
 
-## API Documentation
-- *View API endpoints and their functions (still in progress)*
-
-## Technologies Used
-- **[Ruby-on-Rails](https://rubyonrails.org/)**
-- **[PostgreSQL](https://www.postgresql.org/)**
-
-### **Installation Steps**
+### **Getting Started**
 * Ensure you have `ruby` and `rails` installed or install [Ruby](https://www.ruby-lang.org/en/documentation/installation/) and [Rails](https://rubygems.org/gems/rails)
 * Clone the project repository from your terminal `git clone https://github.com/andela-moseni/dms-in-rails.git`
 * Change directory into the `dms-in-rails` directory
@@ -50,9 +44,8 @@ The following features make up the Document Management System API:
 * Run `rails db:setup` to create database, run migrations and seed data
 * Run `rails s` to start the project
 * Use [Postman](https://www.getpostman.com/) or any API testing tool of your choice to access the endpoints
-
-### **Endpoints**
-**N/B:** For all endpoints that require authentication, use `Authorization: <token>`
+- For all endpoints that require authentication, use `Authorization: <token>`
+- Add `Accept: application/vnd.api+json` and `Content-Type: application/vnd.api+json` to the headers as well
 
 ### Limitations:
 The limitations to the **Document Management System API** are as follows:

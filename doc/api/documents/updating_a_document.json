@@ -1,0 +1,44 @@
+{
+  "resource": "Documents",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "api/v1/documents/:id",
+  "description": "Updating a document",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "api/v1/documents/1188",
+      "request_body": "data[type]=documents&data[attributes][title]=Updated",
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNzI1LCJleHAiOjE1NjU4Njc2OTh9.VvbuN0DsyJ8gR-g7BMc8fRvmkZFZrbqPxq4r7bHARyk",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"data\": [\n    {\n      \"id\": \"1188\",\n      \"type\": \"documents\",\n      \"links\": {\n        \"self\": \"/api/v1/documents/1188\"\n      },\n      \"attributes\": {\n        \"title\": \"Updated\",\n        \"body\": \"Ipsum facilis ut. Enim hic perspiciatis. Id laboriosam modi.\",\n        \"access\": \"public\",\n        \"created-at\": \"2019-08-14T11:14:58.201Z\",\n        \"updated-at\": \"2019-08-14T11:14:58.216Z\"\n      },\n      \"relationships\": {\n        \"user\": {\n          \"links\": {\n            \"self\": \"/api/v1/documents/1188/relationships/user\",\n            \"related\": \"/api/v1/documents/1188/user\"\n          }\n        }\n      },\n      \"meta\": {\n        \"copyright\": \"© 2019 MDS - MeekDocMgtSystem, Inc.\"\n      }\n    }\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"67c5a432064d3bdc47ec68fd29d490f1\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "78edf3a4-8238-40b2-a188-9d545f74e982",
+        "X-Runtime": "0.006941",
+        "Content-Length": "474"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

@@ -4,21 +4,29 @@ class Api::V1::UsersController < ApplicationController
   before_action :check_password_params, only: :update
 
   def index
-    @users = User.select('id, firstname, lastname, email').order('created_at ASC')
-    response = { message: Message.loaded_users, data: @users }
+    response = resource_serializer(
+      resource,
+      User.refined_users,
+      { fields: { users: [:firstname, :lastname, :email] } },
+    )
+
     json_response(response)
   end
 
   def show
     if current_user.id.to_s == params[:id]
-      @user = User.find(params[:id])
-      response = { message: Message.loaded_user, data: @user }
-      json_response(response)
+      user = User.find(params[:id])
+      response = resource_serializer(resource, user)
     else
-      @user = User.select('id, firstname, lastname, email').find(params[:id])
-      response = { message: Message.loaded_user, data: @user }
-      json_response(response)
+      user = User.refined_users.find(params[:id])
+      response = resource_serializer(
+        resource,
+        user,
+        { fields: { users: [:firstname, :lastname, :email] } }
+      )
     end
+
+    json_response(response)
   end
 
   def create
@@ -27,25 +35,34 @@ class Api::V1::UsersController < ApplicationController
     user = User.create!(user_params)
     auth_token = AuthenticateUser.new(user.email, user.password).call
     response = { message: Message.account_created, auth_token: auth_token }
+
     json_response(response, :created)
   end
 
   def update
-    @user.update_attributes!(user_params)
-    response = { message: Message.updated_user, data: @user }
+    current_user.update_attributes!(user_params)
+    response = resource_serializer(resource, current_user)
+
     json_response(response)
   end
 
   def destroy
-    @user.destroy
-    response = { message: Message.deleted_user }
+    current_user.destroy
+  end
+
+  def get_related_resource
+    response = resource_serializer(resource, current_user)
     json_response(response)
   end
 
   private
 
+  def resource
+    Api::V1::UserResource
+  end
+
   def user_params
-    params.permit(
+    params.require(:data).require(:attributes).permit(
       :firstname,
       :lastname,
       :email,
@@ -55,11 +72,17 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def is_current_user
-    raise(ExceptionHandler::Forbidden) unless @current_user.id.to_s == params[:id]
-    @user = @current_user
+    if current_user.id.to_s != params[:id]
+      raise(ExceptionHandler::Forbidden)
+    end
+
+    current_user
   end
 
   def check_password_params
-    raise(ExceptionHandler::PasswordNotBlank) if params[:password] && params[:password].blank?
+    if params[:data][:attributes][:password] &&
+      params[:data][:attributes][:password].blank?
+      raise(ExceptionHandler::PasswordNotBlank)
+    end
   end
 end

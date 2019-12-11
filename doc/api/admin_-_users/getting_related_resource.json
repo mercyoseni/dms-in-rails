@@ -1,0 +1,43 @@
+{
+  "resource": "Admin - Users",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/api/v1/admin/documents/:document_id/user",
+  "description": "Getting related resource",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/admin/documents/1174/user",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNzExLCJleHAiOjE1NjU4Njc2OTh9.tUjR0Y8Cq7oiieFHEDvdGefqTs3wS5f6qBsJq0Ex4b0",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"data\": [\n    {\n      \"id\": \"2712\",\n      \"type\": \"users\",\n      \"links\": {\n        \"self\": \"/api/v1/admin/users/2712\"\n      },\n      \"attributes\": {\n        \"firstname\": \"Kim\",\n        \"lastname\": \"Wilkinson\",\n        \"email\": \"diego@block.org\",\n        \"role\": \"author\",\n        \"created-at\": \"2019-08-14T11:14:58.012Z\",\n        \"updated-at\": \"2019-08-14T11:14:58.012Z\"\n      },\n      \"meta\": {\n        \"copyright\": \"© 2019 MDS - MeekDocMgtSystem, Inc.\"\n      }\n    }\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"727be61f5f75f3cb3716c9b10c10fb9f\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "dc78dc43-e23a-4adc-8eae-92bf389cc1c8",
+        "X-Runtime": "0.005509",
+        "Content-Length": "321"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}
